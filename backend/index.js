@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require('mongoose');
 const app = express(); 
-const authRouter = require('./routes/authRoutes.js');
+const authRouter = require('./routes/authRoutes');
 // options 
 const options = {
   useNewUrlParser: true,
@@ -15,11 +15,11 @@ const options = {
      console.log('MongoDB database in started up!')
     })
 // Port
-port = 5000;
+const port = 5000;
 //use
 app.use(express.json());
 //routes
-app.use(authRouter)
+app.use(authRouter);
 
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`);
