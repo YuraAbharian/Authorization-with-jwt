@@ -20,7 +20,6 @@ const newAuth = new mongoose.Schema({
             type: String,
             trim: true,
             required: true,
-
         },
         tokens: [{
             token: {
@@ -28,16 +27,39 @@ const newAuth = new mongoose.Schema({
                 required: true,
             }
         }]
-});
+}); 
 
+// removing password and tokens from res data!
+newAuth.methods.toJSON =  function () {
+
+    const user = this;
+    const userPrivats = user.toObject();
+
+    delete userPrivats.password;
+    delete userPrivats.tokens;
+
+    return userPrivats
+} ;
+
+
+// relationships between schemas
+
+newAuth.virtual('userDT',{
+    ref:'userDatas',
+    localField:'_id',
+    foreignField:'owner'
+    }
+);
+
+// autocreate new tokens
 newAuth.methods.generateAuthToken = async function () {
     const user = this;
-    const token = jwt.sign({ _id: user._id.toString() }, 'newAuthSecurityWord');
+    const token = jwt.sign({ _id: user._id.toString() }, 'newAuthSecurityWord', { expiresIn: '7 days' });
     user.tokens = user.tokens.concat({ token });
     await user.save();
     return token
-};
-
+}; 
+// Schema find credentials
 newAuth.statics.findByCredentials = async (email, password)=>{
     const user = await Auth.findOne({ email });
     if(!user){
