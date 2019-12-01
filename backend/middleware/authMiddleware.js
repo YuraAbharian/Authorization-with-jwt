@@ -1,16 +1,17 @@
-const Auth = require('../model/auth.js');
-const jwt = require('jsonwebtoken');
+ import { Auth } from "../model";
+import jwt from 'jsonwebtoken';
 
 const authMiddleware = async (req, res, next) => {
 
     try {
-        const token = req.header('Authorization') ? req.header('Authorization').replace('Bearer ', ''):
-            req.headers.cookie.replace('Authorization=Bearer%20', '');
+        // const token = req.header('Authorization') ? req.header('Authorization').replace('Bearer ', ''):
+        const token = req.header('Authorization');
+            // req.headers.cookie.replace('Bearer%20', 'Authorization=');
 
         const decode = jwt.verify(token, 'newAuthSecurityWord');
+
         const user = await Auth.findOne({_id: decode._id, 'tokens.token': token });
-        if(!user){
-           throw new Error('Please authenticate first.');
+        if(!user){  throw new Error('Please authenticate first.');
         }
         req.token = token;
         req.user = user;

@@ -1,0 +1,136 @@
+.user-dialog-column {
+  position: relative;
+  background: #fff;
+  width: 514px;
+  border-radius: 5px;
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  min-height: 800px;
+  font-size: 13px;
+
+  &__header {
+
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e4e6e9;
+    height: 60px;
+    overflow: hidden;
+
+    &__img {
+
+      display: flex;
+      align-items: center;
+
+      img {
+
+        height: 25px;
+        margin-left: 10px;
+
+      }
+
+      span {
+
+        color: #a8aeb8;
+
+      }
+
+    }
+
+    &__name {
+      //margin-left: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      padding-right: 25px;
+      span{
+
+      }
+      img{
+        height: 30px;
+        border-radius: 50%;
+        position: absolute;
+        right: 20px;
+      }
+    }
+  }
+
+  &__dialog {
+    &__texts {
+      ul {
+        list-style: none;
+
+        li {
+          display: grid;
+        }
+      }
+
+      &__container {
+display: flex;
+        align-items: center;
+        &__img {
+
+          img {
+            margin-right: 20px;
+            border-radius: 50%;
+            height: 40px;
+          }
+
+        }
+
+        &__message {
+          span {
+
+          }
+        }
+
+      }
+    }
+&__answer{
+  list-style: none;
+
+  img{
+    margin-right: 20px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  span{
+    display: grid;
+  }
+}
+  }
+
+  &__formik {
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #e3e4e8;
+    width: 100%;
+
+    form {
+      display: flex;
+      align-items: center;
+
+      textarea {
+        margin: 15px 20px;
+        width: 430px;
+        min-height: 20px;
+        border-radius: 5px;
+        outline: none;
+        resize: none;
+
+        &::placeholder {
+          padding: 6px 0 4px 10px;
+          text-align: left;
+        }
+      }
+
+      img {
+        cursor: pointer;
+        height: 25px;
+        width: 25px;
+      }
+    }
+
+
+  }
+}

@@ -1,0 +1,157 @@
+.page-info {
+  margin-right: 15px;
+  width: 230px;
+
+  &__cards {
+
+    border-radius: 5px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+    width: 200px;
+    height: 242px;
+    padding: 15px;
+    background: #fff;
+    margin-bottom: 15px;
+position: relative;
+    img {
+      border-radius: 5px;
+      height: 200px;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+
+      &__user {
+        margin: 10px 10px 0 10px;
+        width: 70px;
+
+        &__container {
+          display: grid;
+          cursor: pointer;
+          span {
+            color: #2a5885;
+            font-size: 13px;
+          }
+
+          img {
+            margin-top: 5px;
+            height: 40px;
+            border-radius: 50%;
+
+          }
+
+        }
+
+      }
+    }
+
+
+    &__bottom {
+      padding: 10px 0;
+      display: flex;
+      text-align: center;
+      font-size: 12.5px;
+      flex-direction: row;
+      position: absolute;
+      bottom: 5px;
+
+      aside {
+        flex: 2 0 0;
+        background: #e5ebf1;
+        margin-right: 15px;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background: #dae0e6;
+        }
+      }
+
+
+      img {
+        flex: 0 0 1;
+        padding: 5px;
+        float: right;
+        background: #e5ebf1;
+        height: 18px;
+        width: 18px;
+        cursor: pointer;
+
+        &:hover {
+          background: #dae0e6;
+        }
+      }
+
+
+    }
+  }
+}
+
+.page-content {
+  background: #edeef0;
+  margin-bottom: 15px;
+
+  &__textarea {
+    display: block;
+
+    &__box {
+
+      width: 514px;
+      height: 50px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+
+      &__text {
+        color: rgb(156, 156, 156);
+        padding: 0 10px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+        img {
+
+          height: 25px;
+          width: 25px;
+          border-radius: 50px;
+          margin-right: 10px;
+
+        }
+      }
+    }
+
+    &__posts {
+      padding-bottom: 28px;
+
+      button {
+        float: right;
+        padding: 5px;
+
+      }
+
+      &__field {
+        textarea {
+          top: 3px;
+          padding: 5px 0 0 5px;
+          outline: none;
+          border-radius: 5px;
+          width: 99%;
+          height: 30px;
+          resize: none;
+
+          font-size: 15px;
+
+          ::placeholder {
+            color: rgba(156, 156, 156, 0.66);
+          }
+
+        }
+      }
+
+    }
+
+  }
+
+
+}

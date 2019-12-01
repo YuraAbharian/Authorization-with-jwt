@@ -1,9 +1,10 @@
-const express = require("express");
-const mongoose = require('mongoose');
-const cors = require('cors');
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import {dialogsRoutes, authRouter, postsRoutes ,postRoutes} from "./routes";
+
 const app = express();
-const authRouter = require('./routes/authRoutes');
-const cookieParser = require('cookie-parser');
+
 // options 
 const options = {
   useNewUrlParser: true,
@@ -23,9 +24,12 @@ const port = 3001;
 //use
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 app.use(express.json());
-// app.use(cookieParser());
 //routes
+
 app.use(authRouter);
+app.use(postRoutes);
+app.use(dialogsRoutes);
+
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`);
     });

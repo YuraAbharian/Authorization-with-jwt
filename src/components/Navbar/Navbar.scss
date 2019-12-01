@@ -1,0 +1,26 @@
+.navbar {
+  margin-right: 15px;
+  display: block;
+  width: 149px;
+  &__element {
+    font-size: 14px;
+    padding: 5px;
+    a{
+      text-decoration: none;
+      color: #828282;
+    }
+    img {
+      height: 14px;
+      width: 14px;
+      margin: 0 3px;
+
+    }
+
+    &:hover {
+      border-radius: 3px;
+      background: #d7d8da;
+      cursor: pointer;
+    }
+  }
+
+}

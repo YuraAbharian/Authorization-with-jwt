@@ -2,7 +2,9 @@
   <dictionary name="Yura">
     <words>
       <w>baccdb</w>
+      <w>bcrypt</w>
       <w>datas</w>
+      <w>loggout</w>
     </words>
   </dictionary>
 </component>

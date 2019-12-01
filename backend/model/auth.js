@@ -1,9 +1,14 @@
-const mongoose = require('mongoose');
-const validator = require('validator');
-const bcrypt = require('bcryptjs');
-const jwt = require("jsonwebtoken");
+import mongoose  from 'mongoose';
+import validator from 'validator';
+import bcrypt from 'bcryptjs';
+import jwt from"jsonwebtoken";
 
 const newAuth = new mongoose.Schema({
+        login:{
+            type: String,
+            unique: true,
+            trim: true,
+        },
         email:{
             type: String,
             unique: true, 
@@ -43,7 +48,6 @@ newAuth.methods.toJSON =  function () {
 
 
 // relationships between schemas
-
 newAuth.virtual('userDT',{
     ref:'userDatas',
     localField:'_id',
@@ -81,4 +85,4 @@ newAuth.pre('save', async function (next) {
 });
 const Auth = mongoose.model('Auth', newAuth);
 
-module.exports = Auth;
+export  default  Auth;

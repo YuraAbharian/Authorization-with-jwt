@@ -1,42 +1,36 @@
 import React from 'react';
-import './App.css';
-import * as axios from 'axios'
-import {Field, Form, withFormik} from "formik";
+import './App.scss';
+import Navbar from "./components/Navbar/Navbar";
+import ProfileContainer from "./components/Profile/ProfileContainer";
+import {Route} from "react-router";
+import MessagesContainer from "./components/Messages/MessagesContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
+import LoginContainer from "./helpers/LoginForm/LoginContainer";
+import RegisterContainer from "./helpers/RegisterForm/RegisterContainer";
 
 
 function App() {
-  return (
-    <div className="App">
+    return (  
+        <div className='app'>
+            <div className='app__container'>
 
-      <Form>
-        <Field name='email' component='input'  type='text'  placeholder="Type message"/>
-        <Field name='password' component='input'  type='text'  placeholder="Type message"/>
-        <button type='submit'>log</button>
+                <HeaderContainer/>
 
-      </Form>
+                <div className='app__container__body'>
+                    <Navbar/>
+                    <div className='app__container__body__main'>
+                        <Route path='/profile/:id?' render={() => <ProfileContainer/>}/>
+                        <Route path='/messages' render={() => <MessagesContainer/>}/>
+                        <Route path='/login' render={() => <LoginContainer/>}/>
+                        <Route path='/register' render={() => <RegisterContainer/>}/>
+                    </div>
 
-    </div>
-  );
+                </div>
+
+            </div>
+        </div>
+
+    );
 }
 
-
-const AppForm = withFormik({
-    mapPropsToValues: ({email, password}) => {
-        return {
-            email: email || '',
-            password: password || '',
-        }
-    } ,
-    handleSubmit({email, password}, {props, setValues  } ) {
-        const instance = axios.create({
-            baseURL: 'http://localhost:3001/',
-            withCredentials:true,
-        });
-        // instance.post('/register',{ email, password });
-        // instance.post('/login',{ email, password });
-        instance.get('/me');
-        // instance.get('/logout');
-    },
-})(App);
-
-export default AppForm;
+export default App;

@@ -1,0 +1,68 @@
+.messages {
+  display: flex;
+  height: 100%;
+
+  &__field {
+
+
+
+    &__dialogs {
+      background: #fff;
+      width: 514px;
+      border-radius: 5px;
+      box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+      min-height: 800px;
+      font-size: 13px;
+
+      //:hover{
+      //  background: rgba(201, 202, 205, 0.45);
+      //  border-radius: 5px;
+      //}
+      &__current {
+
+        cursor: pointer;
+        display: flex;
+        padding-top: 10px;
+        label{
+          cursor: pointer;
+        }
+        &__profile {
+
+          float: left;
+          display: block;
+
+          img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin: 0 10px;
+          }
+
+        }
+
+        &__texts {
+          position: relative;
+          display: grid;
+          float: right;
+          width: 450px;
+          height: 51px;
+          border-bottom: 0.2px solid rgba(156, 156, 156, 0.59);
+          padding: 10px;
+
+          span {
+            color: #656565;
+          }
+
+          aside {
+            color: #a0a4ae;
+            position: absolute;
+            top: 18px;
+            right: 8px;
+          }
+        }
+      }
+    }
+  }
+
+
+}

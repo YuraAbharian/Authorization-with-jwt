@@ -1,0 +1,61 @@
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #4a76a8;
+  min-height: 42px !important;
+  height: 42px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #4872a3;
+
+  &__block {
+    display: flex;
+    height: 100%;
+    width: 900px;
+    border-radius: 5px;
+    position: relative;
+button{
+  right: 109px;
+  height: 100%;
+  position: absolute;
+}
+    &__login {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+
+      a {
+        color: white;
+        text-decoration: none;
+        padding-bottom: 5px;
+
+        &:hover {
+          border-bottom: 1px solid black;
+        }
+      }
+    }
+    &__register{
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+
+      a {
+        color: white;
+        text-decoration: none;
+        padding-bottom: 5px;
+
+
+        &:hover {
+          border-bottom: 1px solid black;
+        }
+      }
+    }
+    span {
+      position: absolute;
+      top: 12px;
+      right: 0;
+    }
+  }
+}
